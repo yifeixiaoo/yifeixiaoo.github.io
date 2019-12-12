@@ -7,6 +7,15 @@ div {
 
 }
 
+li {
+	display: inline;
+}
+
+#intro{
+	margin: auto;
+	width: 50%;
+}
+
 #nav{
 	list-style-type: none;
 	background-color: rgb(213,233,240);
@@ -15,11 +24,10 @@ div {
 
 #nav a {
 	color: #f2f2f2;
-	float: right;
-	color: #f2f2f2;
   	text-align: center;
   	padding: 14px 10px;
   	text-decoration: none;
   	font-size: 17px;
   	font-family: "Open Sans";
 }
+
