@@ -50,33 +50,41 @@ li {
   	font-family: Arial, Helvetica, sans-serif;
 }
 
-.Intro{
+#Intro{
 	font-family: Arial, Helvetica, sans-serif;
 	margin: auto;
-	width: 40%;
-	text-align:center;
+	width: 75%;
+
+	
 }
 
 
-.Intro img{
+#Intro #portrait{
 	float:left;
 	height: 100%;
+	/*width: 25%;*/
+	display:block;
+	
 
 }
 
-.Intro #about{
+#Intro #about{
+	/*float:left;*/
 	margin: auto;
+	text-align:center;
+	/*width: 75%;*/
+	display:block;
 }
 
 
-.Experience{
+#Experience{
 	margin: auto;
 	width: 50%;
 	text-align:center;
 
 }
 
-.Projects{
+#Projects{
 	margin:auto;
 	width:50%;
 	text-align: center;
