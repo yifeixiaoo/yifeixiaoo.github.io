@@ -42,6 +42,7 @@ li {
   	text-decoration: none;
   	font-size: 17px;
   	font-family: Arial, Helvetica, sans-serif;
+  	color: black;
 }
 
 #Intro{
@@ -73,8 +74,19 @@ li {
 
 #Experience{
 	margin: auto;
-	width: 50%;
+	width: 740px;
 	text-align:center;
+	height: 400px;
+}
+#Experience img{
+	float:right;
+}
+
+#Experience #description{
+	float:left;
+	height: 200px;
+	width:400px;
+	text-align:left;
 
 }
 
