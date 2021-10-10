@@ -1,0 +1,83 @@
+body {
+	/* background-color: rgb(61, 61, 61); */
+    background: linear-gradient(to bottom, #8942a8, #ba382f)
+}
+
+#source,
+#back {
+	opacity: 0;
+}
+
+#source.loaded,
+#back.loaded {
+	transition: opacity 1s linear, color 500ms ease;
+	opacity: 1;
+}
+
+#source:not(.loaded) {
+	cursor: default;
+}
+
+#source {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	margin: 10px;
+	text-align: right;
+	font-weight: lighter;
+}
+
+#back {
+	top: 0;
+	left: 0;
+	bottom: 100%;
+	right: 100%;
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	filter: brightness(50%);
+	-webkit-user-drag: none;
+}
+
+.profile_pic {
+        width: 30%;
+        height: auto;
+}
+.fa {
+	margin: 0 2.5px;
+}
+
+.fa-github:hover {
+	color: #333;
+}
+
+.fa-linkedin:hover {
+	color: #2867B2;
+}
+
+.fa-file-text:hover {
+	color: #FF6138;
+}
+
+.fa-envelope:hover {
+	color: #BB001B;
+}
+.custom-shape-divider-bottom-1633821533 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1633821533 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 144px;
+}
+
+.custom-shape-divider-bottom-1633821533 .shape-fill {
+    fill: #FFFFFF;
+}
