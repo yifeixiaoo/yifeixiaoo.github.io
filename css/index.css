@@ -43,6 +43,27 @@ body {
         width: 30%;
         height: auto;
 }
+
+.typed-text {
+	color: #dd7732;
+}
+
+.cursor {
+	display: inline-block;
+	width: 2px;
+	background-color: rgba(255, 255, 255, 0.5);
+	margin-left: 0.1rem;
+	animation: blink 1s infinite;
+}
+
+@keyframes blink {
+	0% {background-color: rgba(255, 255, 255, 0.5);}
+	49% {background-color: rgba(255, 255, 255, 0.5);}
+	50% {background-color: transparent;}
+	99% {background-color: transparent;}
+	100% {background-color: rgba(255, 255, 255, 0.5);}
+}
+
 .fa {
 	margin: 0 2.5px;
 }
@@ -81,3 +102,4 @@ body {
 .custom-shape-divider-bottom-1633821533 .shape-fill {
     fill: #FFFFFF;
 }
+
