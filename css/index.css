@@ -1,6 +1,11 @@
 body {
 	/* background-color: rgb(61, 61, 61); */
-    background: linear-gradient(to bottom, #8942a8, #ba382f)
+    /* background: linear-gradient(to bottom, #8942a8, #ba382f); */
+	/* background: linear-gradient(to bottom, #8942a8, #ba382f); */
+	/* background-image: url(../contents/background3.jpg); */
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 
 #source,
@@ -45,7 +50,7 @@ body {
 }
 
 .typed-text {
-	color: #dd7732;
+	color: #FF6138;
 }
 
 .cursor {
@@ -83,7 +88,7 @@ body {
 .fa-envelope:hover {
 	color: #BB001B;
 }
-.custom-shape-divider-bottom-1633821533 {
+/* .custom-shape-divider-bottom-1633821533 {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -101,5 +106,5 @@ body {
 
 .custom-shape-divider-bottom-1633821533 .shape-fill {
     fill: #FFFFFF;
-}
+} */
 
