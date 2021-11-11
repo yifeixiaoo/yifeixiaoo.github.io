@@ -1,26 +1,9 @@
 body {
-	/* background-color: rgb(61, 61, 61); */
-    /* background: linear-gradient(to bottom, #8942a8, #ba382f); */
+	/* background-color: rgba(255, 255, 255, 0.5); */
 	/* background: linear-gradient(to bottom, #8942a8, #ba382f); */
-	/* background-image: url(../contents/background3.jpg); */
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-}
-
-#source,
-#back {
-	opacity: 0;
-}
-
-#source.loaded,
-#back.loaded {
-	transition: opacity 1s linear, color 500ms ease;
-	opacity: 1;
-}
-
-#source:not(.loaded) {
-	cursor: default;
 }
 
 #source {
@@ -88,23 +71,4 @@ body {
 .fa-envelope:hover {
 	color: #BB001B;
 }
-/* .custom-shape-divider-bottom-1633821533 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-}
-
-.custom-shape-divider-bottom-1633821533 svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 144px;
-}
-
-.custom-shape-divider-bottom-1633821533 .shape-fill {
-    fill: #FFFFFF;
-} */
 
