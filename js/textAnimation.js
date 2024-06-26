@@ -1,46 +1,53 @@
 // Text Animation
-
-const typedTextSpan = document.querySelector(".typed-text");
-const cursorSpan = document.querySelector(".cursor");
-
-const textArray = ["Coding", "Open Source", "Cooking", "Algorithms", "Travel", "Web Development", "Gaming"];
 const typingDelay = 200;
 const erasingDelay = 100;
-const newTextDelay = 2000;
-let textArrayIndex = 0;
-let charIndex = 0;
+const newTextDelay = 3000;
+const initialDelay = 2000;
 
-function type() {
-  if (charIndex < textArray[textArrayIndex].length) {
-    if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
-    typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
-    charIndex++;
-    setTimeout(type, typingDelay);
-  } 
-  else {
-    cursorSpan.classList.remove("typing");
-  	setTimeout(erase, newTextDelay);
-  }
-}
+document.addEventListener("DOMContentLoaded", function() {
+    const typedTextSpans = document.querySelectorAll(".typed-text");
 
-function erase() {
-	if (charIndex > 0) {
-    if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
-    typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex-1);
-    charIndex--;
-    setTimeout(erase, erasingDelay);
-  } 
-  else {
-    cursorSpan.classList.remove("typing");
-    textArrayIndex++;
-    if(textArrayIndex>=textArray.length) textArrayIndex=0;
-    setTimeout(type, typingDelay + 1100);
-  }
-}
+    typedTextSpans.forEach(typedTextSpan => {
+        const cursorSpan = typedTextSpan.nextElementSibling;
+        const textData = typedTextSpan.getAttribute("data-text").split(",");
+        const textArray = textData.map(item => {
+            const [text, url] = item.split("|");
+            return { text, url };
+        });
 
-document.addEventListener("DOMContentLoaded", function() { 
-  if(textArray.length) setTimeout(type, newTextDelay + 250);
+        let textArrayIndex = 0;
+        let charIndex = 0;
+
+        function type() {
+            if (charIndex < textArray[textArrayIndex].text.length) {
+                if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+                const text = textArray[textArrayIndex].text.charAt(charIndex);
+                typedTextSpan.innerHTML = `<a href="${textArray[textArrayIndex].url}" target="_blank">${typedTextSpan.innerText + text}</a>`;
+                charIndex++;
+                setTimeout(type, typingDelay);
+            } else {
+                cursorSpan.classList.remove("typing");
+                if (textArray.length > 1) {
+                    setTimeout(erase, newTextDelay);
+                }
+            }
+        }
+
+        function erase() {
+            if (charIndex > 0) {
+                if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+                const text = textArray[textArrayIndex].text.substring(0, charIndex - 1);
+                typedTextSpan.innerHTML = `<a href="${textArray[textArrayIndex].url}" target="_blank">${text}</a>`;
+                charIndex--;
+                setTimeout(erase, erasingDelay);
+            } else {
+                cursorSpan.classList.remove("typing");
+                textArrayIndex++;
+                if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+                setTimeout(type, typingDelay + 1100);
+            }
+        }
+
+        if (textArray.length) setTimeout(type, initialDelay);
+    });
 });
-
-// TODO: refactor project using React
-
